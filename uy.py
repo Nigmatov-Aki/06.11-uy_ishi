@@ -46,3 +46,11 @@ if natija:
        print(f"{f['title']} | {f['genre']} | {f['price']} so'm")
 else:
     print(" [] Bunday janrdagi film topilmadi")
+# >>>>>>>>>>>>>>>>>>>>>>>>>-3-<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def merge_unique_ids(active_users: list[str], new_users: list[str]) -> list:
+    all_users=[x.strip() for x in active_users + new_users if x.strip()]
+    return(list(set(all_users)))
+active_users=input("Namuna:active_users =[U1001, U1002, U1003, U1004, U1001] ',' bilan ajrating!!!\n active_users :").split(",")
+new_users=input("\nNamuna:active_users = [U1003, U1005, U1006 ,U1002, U1007] ',' bilan ajrating!!!\n new_users :").split(",")
+
+print("Noyob ID lar ro'yxati:",merge_unique_ids(active_users,new_users))
