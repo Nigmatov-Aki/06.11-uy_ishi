@@ -68,6 +68,19 @@ for x in range(int(input("Nechta mahsulot:"))):
     products.append((nomi,narxi,miqdori))
 
 natija=sorted_by_price(products)
-
 for x in natija:
     print(x)
+# >>>>>>>>>>>>>>>>>>>>>>>>>-5-<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def are_numbers_ascending(text: str) -> bool:
+    sonlar=[]
+    for soz in text.split():
+        if soz.isdigit():
+            sonlar.append(int(soz))
+    for x in range(len(sonlar)-1):
+        if sonlar[x]>=sonlar[x+1]:
+            return False
+        
+    return True
+
+
+print(are_numbers_ascending(input("Matn:")))
