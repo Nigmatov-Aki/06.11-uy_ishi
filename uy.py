@@ -22,3 +22,27 @@ if kop_son != -1:
     print("Eng ko'p takrorlangan son:",kop_son )
 else:
     print("bo'sh ro'yxat",kop_son)
+# >>>>>>>>>>>>>>>>>>>>>>>>>-2-<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def search_by_genre(cinema: list, genre: str) -> list:
+    natija=[]
+    for film in cinema:
+        if film["genre"].lower()==genre.lower():
+            natija.append(film)
+    return natija
+
+cinema = [
+    {"title": "Avatar", "genre": "Fantastika", "price": 40000},
+    {"title": "Sherlock", "genre": "Detektiv", "price": 30000},
+    {"title": "Oq yo'l", "genre": "Drama", "price": 25000},
+    {"title": "Dune", "genre": "Fantastika", "price": 35000},
+]    
+
+janr=input("Qaysi janrdagi film qidiryapsiz (masalan: Fantastika, Drama, Detektiv)\n:")
+
+natija=search_by_genre(cinema,janr)
+
+if natija:
+    for f in natija:
+       print(f"{f['title']} | {f['genre']} | {f['price']} so'm")
+else:
+    print(" [] Bunday janrdagi film topilmadi")
