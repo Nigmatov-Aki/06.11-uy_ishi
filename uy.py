@@ -54,3 +54,20 @@ active_users=input("Namuna:active_users =[U1001, U1002, U1003, U1004, U1001] ','
 new_users=input("\nNamuna:active_users = [U1003, U1005, U1006 ,U1002, U1007] ',' bilan ajrating!!!\n new_users :").split(",")
 
 print("Noyob ID lar ro'yxati:",merge_unique_ids(active_users,new_users))
+# >>>>>>>>>>>>>>>>>>>>>>>>>-4-<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+def sorted_by_price(products: list) -> list:
+    return sorted(products, key=lambda x: int(x[1]),reverse=True)
+
+products=[]
+for x in range(int(input("Nechta mahsulot:"))):
+    print(f"---{x+1}-Mahsulot---")
+    nomi = input("Mahsulot nomi: ")
+    narxi = input("Narxi: ")
+    miqdori = input("Soni: ")
+
+    products.append((nomi,narxi,miqdori))
+
+natija=sorted_by_price(products)
+
+for x in natija:
+    print(x)
